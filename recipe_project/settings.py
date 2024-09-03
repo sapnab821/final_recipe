@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import dj_database_url
 from pathlib import Path
 import os
 
@@ -21,11 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-<<<<<<< HEAD
+
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','django-insecure-8x(n9y@4gacy1^@)a9(n1b))^ulm!%r7x1_^u*7vz017=2m!x@')
-=======
-SECRET_KEY = ${{secret.secret}}
->>>>>>> 93a27235fc77d0d80a7dd61c4469287a8c12c308
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -86,7 +84,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
