@@ -121,23 +121,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-
-STATICFILES_DIRS=[
-   BASE_DIR / 'static'
-]
+STATICFILES_DIRS=[ BASE_DIR / 'static']
 # The absolute path to the directory where collectstatic will collect static files for deployment.
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = 'static/'
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+
 STATICFILES_DIRS = [
     '/Users/sapnabolikal/recipe_app/recipes/static',
 ]
-MEDIA_URL = '/media/'
+MEDIA_URL = '/media/recipes/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
 
 
 # Default primary key field type
@@ -152,3 +147,4 @@ LOGIN_URL='/login/'
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
+

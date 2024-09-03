@@ -26,5 +26,4 @@ urlpatterns = [
     path('recipes/', include('recipes.urls')),  # /recipes/ also uses the recipes app
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout')
-]
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
