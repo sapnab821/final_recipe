@@ -95,8 +95,6 @@ def records(request):
         'chart': chart
     }
     
-   
-
     
     # Load the recipes/records.html page using the data that you just prepared
     return render(request, 'recipes/records.html', context)
