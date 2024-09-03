@@ -27,6 +27,3 @@ urlpatterns = [
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout')
 ]
-
-# Serve media files through Django during development.
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
