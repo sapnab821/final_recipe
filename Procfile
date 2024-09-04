@@ -1,1 +1,1 @@
-web: daphne -u /tmp/daphne.sock recipe_app.asgi:application
+web: PYTHONPATH=. gunicorn recipe_app.wsgi --log-file -
