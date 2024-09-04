@@ -8,3 +8,4 @@ virtualenv==20.26.3
 virtualenv-clone==0.5.7
 virtualenvwrapper==6.1.0
 gunicorn
+Django
