@@ -128,7 +128,7 @@ STATIC_URL = 'static/'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    '/Users/sapnabolikal/recipe_app/recipes/static',
+    os.path.join(BASE_DIR, 'recipes/static'),
 ]
 MEDIA_URL = '/media/recipes/'
 MEDIA_ROOT = BASE_DIR / 'media'
