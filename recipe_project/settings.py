@@ -184,4 +184,11 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': 'HQnYJfjkpB7d0vkYrdsVA-6Yay8'
 }
 
+cloudinary.config(
+    cloud_name='dbitredaf',
+    api_key='246954438558686',
+    api_secret='HQnYJfjkpB7d0vkYrdsVA-6Yay8',
+    secure=True
+)
+
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
