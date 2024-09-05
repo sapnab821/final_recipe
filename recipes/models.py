@@ -1,6 +1,8 @@
 from django.db import models
-from django.shortcuts import reverse
+from django.shortcuts import reverse, render
 from cloudinary.models import CloudinaryField
+
+
 
 # Create your models here.
 
@@ -14,6 +16,7 @@ class Recipe(models.Model):
     cooking_time = models.IntegerField(help_text="Enter cooking time in minutes")
     name = models.CharField(max_length=100)
     pic = CloudinaryField('image', default='recipes/no_picture.jpg')
+
 
 
     def get_image_url(self):
@@ -42,3 +45,7 @@ class Recipe(models.Model):
     # string representation
     def __str__(self):
         return str(self.name)
+    
+def recipe_list(request):
+    recipes = Recipe.objects.all()
+    return render(request, 'recipes/recipe_list.html', {'recipes': recipes})
