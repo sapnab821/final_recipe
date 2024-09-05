@@ -151,7 +151,8 @@ STATICFILES_DIRS = [
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_URL = '/media/'
+MEDIA_URL = 'https://res.cloudinary.com/your-cloud-name/media/'
+
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
