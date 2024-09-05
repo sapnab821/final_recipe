@@ -8,7 +8,8 @@ import pandas as pd
 from .utils import get_chart
 from django.shortcuts import reverse
 from django.contrib.auth.decorators import login_required
-
+from django.shortcuts import render
+import cloudinary.api
 
 # Create your views here.
 def home(request):
@@ -101,3 +102,20 @@ def records(request):
 
 
 
+def list_images(request):
+    # Configure Cloudinary
+    cloudinary.config(
+        cloud_name='dbitredaf',
+        api_key='246954438558686',
+        api_secret='HQnYJfjkpB7d0vkYrdsVA-6Yay8'
+    )
+    
+    # Fetch images from Cloudinary
+    def list_all_images():
+        resources = cloudinary.api.resources(type='upload', resource_type='image')
+        return resources['resources']
+    
+    images = list_all_images()
+
+    # Pass images to the template
+    return render(request, 'recipe_list.html', {'images': images})
