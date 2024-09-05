@@ -28,7 +28,8 @@ class RecipeDetailView(DetailView):                       #class-based view
 # Create your views here.
 class RecipeListView(LoginRequiredMixin, ListView):     #class-based “protected” view
     model = Recipe                                    #specify model
-    template_name = 'recipes/recipes_list.html'  
+    template_name = 'recipes/recipes_list.html'
+    context_object_name = 'recipes'   
  
 
 
@@ -113,7 +114,7 @@ all_images = list_all_images()
 
 for image in all_images['resources']:
     print(f"Public ID: {image['public_id']}, URL: {image['url']}")
-    
+
 def save_recipe_with_image(public_id, format, name):
     recipe = Recipe(name=name, pic_public_id=public_id, pic_format=format)
     recipe.save()
