@@ -1,7 +1,12 @@
 {% load static %}
-<head> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
-</head>
+
     <div class="navbar">
         <a href="{% url 'recipes:home' %}" class="logo">MyWebsite</a>
         <a href="{% url 'recipes:about' %}">About</a>
@@ -30,7 +35,7 @@
         <p></p>
         <a href="{{ object.get_absolute_url }}">{{ object.name }}</a>
         <p></p>
-        <img class = "cardimage" src="https://res.cloudinary.com/dbitredaf/image/upload/{{ recipe.pic_public_id }}.{{ recipe.pic_format }}" alt="{{ recipe.name }}">
+        <img class= "cardimage" src="{{ object.pic.url }}"  />
        
 </div>
 {% endfor %}
@@ -40,7 +45,3 @@
 </div>
 </div>
 </div>
-
-
-
-

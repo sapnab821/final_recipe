@@ -12,9 +12,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import dj_database_url
 from pathlib import Path
 import os
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -43,8 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cloudinary',
-    'cloudinary_storage',
     #recipe-related apps
     'recipes',
 ]
@@ -152,7 +147,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
-
+MEDIA_URL = '/media/'
+MEDIA_ROOT= BASE_DIR / 'media'
 
 
 
@@ -177,17 +173,3 @@ if not DEBUG:
     # and renames the files with unique names for each version to support long-term caching
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dbitredaf',
-    'API_KEY': '246954438558686',
-    'API_SECRET': 'HQnYJfjkpB7d0vkYrdsVA-6Yay8'
-}
-
-cloudinary.config(
-    cloud_name='dbitredaf',
-    api_key='246954438558686',
-    api_secret='HQnYJfjkpB7d0vkYrdsVA-6Yay8',
-    secure=True
-)
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'

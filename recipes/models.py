@@ -1,6 +1,6 @@
 from django.db import models
 from django.shortcuts import reverse, render
-from cloudinary.models import CloudinaryField
+
 
 
 
@@ -15,9 +15,7 @@ class Recipe(models.Model):
     )
     cooking_time = models.IntegerField(help_text="Enter cooking time in minutes")
     name = models.CharField(max_length=100)
-    pic = CloudinaryField('image', default='recipes/no_picture.jpg')
-    pic_public_id = models.CharField(max_length=255)  # Store Cloudinary public_id without extension
-    pic_format = models.CharField(max_length=10, default='jpg') 
+    pic = models.ImageField(upload_to="recipes", default='no_picture.jpg')
 
 
     def difficulty(self):
