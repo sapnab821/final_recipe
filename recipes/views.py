@@ -100,22 +100,3 @@ def records(request):
     # Load the recipes/records.html page using the data that you just prepared
     return render(request, 'recipes/records.html', context)
 
-
-
-def list_images(request):
-    # Configure Cloudinary
-    cloudinary.config(
-        cloud_name='dbitredaf',
-        api_key='246954438558686',
-        api_secret='HQnYJfjkpB7d0vkYrdsVA-6Yay8'
-    )
-    
-    # Fetch images from Cloudinary
-    def list_all_images():
-        resources = cloudinary.api.resources(type='upload', resource_type='image')
-        return resources['resources']
-    
-    images = list_all_images()
-
-    # Pass images to the template
-    return render(request, 'recipe_list.html', {'images': images})
