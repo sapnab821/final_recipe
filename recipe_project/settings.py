@@ -152,7 +152,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
-
+MEDIA_URL = 'https://res.cloudinary.com/dbitredaf/image/upload/v1725513403/'
 
 
 
