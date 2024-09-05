@@ -100,3 +100,6 @@ def records(request):
     # Load the recipes/records.html page using the data that you just prepared
     return render(request, 'recipes/records.html', context)
 
+def save_recipe_with_image(public_id, format, name):
+    recipe = Recipe(name=name, pic_public_id=public_id, pic_format=format)
+    recipe.save()

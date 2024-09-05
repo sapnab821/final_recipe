@@ -30,7 +30,7 @@
         <p></p>
         <a href="{{ object.get_absolute_url }}">{{ object.name }}</a>
         <p></p>
-         <img class="cardimage"  src="https://res.cloudinary.com/dbitredaf/image/upload/v1725513403/{{object.pic.url}}.jpg"/>
+        <img class = "cardimage" src="https://res.cloudinary.com/dbitredaf/image/upload/{{ recipe.pic_public_id }}.{{ recipe.pic_format }}" alt="{{ recipe.name }}">
        
 </div>
 {% endfor %}

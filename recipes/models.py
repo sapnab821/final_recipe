@@ -16,6 +16,9 @@ class Recipe(models.Model):
     cooking_time = models.IntegerField(help_text="Enter cooking time in minutes")
     name = models.CharField(max_length=100)
     pic = CloudinaryField('image', default='recipes/no_picture.jpg')
+    pic_public_id = models.CharField(max_length=255)  # Store Cloudinary public_id without extension
+    pic_format = models.CharField(max_length=10, default='jpg') 
+
 
     def difficulty(self):
         if self.cooking_time < 10 and len(self.ingredients.split(',')) < 4:
