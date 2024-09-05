@@ -96,10 +96,24 @@ def records(request):
         'chart': chart
     }
     
-    
-    # Load the recipes/records.html page using the data that you just prepared
     return render(request, 'recipes/records.html', context)
 
+cloudinary.config(
+    cloud_name='dbitredaf',
+    api_key='246954438558686',
+    api_secret='HQnYJfjkpB7d0vkYrdsVA-6Yay8'
+)
+    # Load the recipes/records.html page using the data that you just prepared
+    
+def list_all_images():
+    resources = cloudinary.api.resources(type='upload', resource_type='image')
+    return resources
+
+all_images = list_all_images()
+
+for image in all_images['resources']:
+    print(f"Public ID: {image['public_id']}, URL: {image['url']}")
+    
 def save_recipe_with_image(public_id, format, name):
     recipe = Recipe(name=name, pic_public_id=public_id, pic_format=format)
     recipe.save()
