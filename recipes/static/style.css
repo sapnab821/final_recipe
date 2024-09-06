@@ -170,3 +170,35 @@ table  {
     width:75px;
     height:75px;
 }
+
+.detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: center;
+    padding: 100px;
+  
+}
+
+.detail-inner{
+    display: flex;
+    padding: 50px;
+    gap: 50px;
+    justify-content: center;
+}
+
+.detail-link{
+    display: flex;
+    justify-content: center;
+}
+
+.card-detail {
+   
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
+    padding: 16px 16px;
+  }
